@@ -1,8 +1,5 @@
-# https://github.com/gpakosz/.tmux
-# (‑●‑●)> dual licensed under the WTFPL v2 license and the MIT license,
-#         without any warranty.
-#         Copyright 2012— Gregory Pakosz (@gpakosz).
-
+# fix for Mac pbcopy & pbpaste issues
+#if "command -v zsh" 'set -g default-command zsh'
 
 # -- navigation ----------------------------------------------------------------
 
@@ -29,12 +26,12 @@ tmux_conf_new_pane_retain_current_path=true
 # new pane tries to reconnect ssh sessions (experimental), possible values are:
 #   - true
 #   - false (default)
-tmux_conf_new_pane_reconnect_ssh=false
+tmux_conf_new_pane_reconnect_ssh=true
 
 # prompt for session name when creating a new session, possible values are:
 #   - true
 #   - false (default)
-tmux_conf_new_session_prompt=false
+tmux_conf_new_session_prompt=true
 
 
 # -- display -------------------------------------------------------------------
@@ -42,7 +39,7 @@ tmux_conf_new_session_prompt=false
 # RGB 24-bit colour support (tmux >= 2.2), possible values are:
 #  - true
 #  - false (default)
-tmux_conf_theme_24b_colour=true
+tmux_conf_theme_24b_colour=false
 
 # window style
 tmux_conf_theme_window_fg='default'
@@ -55,7 +52,7 @@ tmux_conf_theme_highlight_focused_pane=false
 
 # focused pane colours:
 tmux_conf_theme_focused_pane_fg='default'
-tmux_conf_theme_focused_pane_bg='#0087d7'               # light blue
+tmux_conf_theme_focused_pane_bg='#0087d7'
 
 # pane border style, possible values are:
 #   - thin (default)
@@ -63,31 +60,31 @@ tmux_conf_theme_focused_pane_bg='#0087d7'               # light blue
 tmux_conf_theme_pane_border_style=thin
 
 # pane borders colours:
-tmux_conf_theme_pane_border='#444444'                   # gray
-tmux_conf_theme_pane_active_border='#bd93f9'            # light blue
+tmux_conf_theme_pane_border='#444444'
+tmux_conf_theme_pane_active_border='#bd93f9'
 
 # pane indicator colours
-tmux_conf_theme_pane_indicator='#00afff'                # light blue
-tmux_conf_theme_pane_active_indicator='#00afff'         # light blue
+tmux_conf_theme_pane_indicator='#00afff'
+tmux_conf_theme_pane_active_indicator='#00afff'
 
 # status line style
-tmux_conf_theme_message_fg='#282a36'                    # black
-tmux_conf_theme_message_bg='#ff79c6'                    # yellow
+tmux_conf_theme_message_fg='#282a36'
+tmux_conf_theme_message_bg='#ff79c6'
 tmux_conf_theme_message_attr='bold'
 
 # status line command style (<prefix> : Escape)
-tmux_conf_theme_message_command_fg='#ffff00'            # yellow
-tmux_conf_theme_message_command_bg='#000000'            # black
+tmux_conf_theme_message_command_fg='#ffff00'
+tmux_conf_theme_message_command_bg='#000000'
 tmux_conf_theme_message_command_attr='bold'
 
 # window modes style
-tmux_conf_theme_mode_fg='#000000'                       # black
-tmux_conf_theme_mode_bg='#ffff00'                       # yellow
+tmux_conf_theme_mode_fg='#000000'
+tmux_conf_theme_mode_bg='#ffff00'
 tmux_conf_theme_mode_attr='bold'
 
 # status line style
-tmux_conf_theme_status_fg='#f8f8f2'                     # light gray
-tmux_conf_theme_status_bg='#282a36'                     # dark gray
+tmux_conf_theme_status_fg='#f8f8f2'
+tmux_conf_theme_status_bg='#282a36'
 tmux_conf_theme_status_attr='none'
 
 # terminal title
@@ -108,11 +105,11 @@ tmux_conf_theme_terminal_title='#h ❐ #S ● #I #W'
 #     - #{hostname_ssh}
 #     - #{username}
 #     - #{username_ssh}
-tmux_conf_theme_window_status_fg='#f8f8f2'              # light gray
-tmux_conf_theme_window_status_bg='#282a36'              # dark gray
+tmux_conf_theme_window_status_fg='#f8f8f2'
+tmux_conf_theme_window_status_bg='#282a36'
 tmux_conf_theme_window_status_attr='none'
-#tmux_conf_theme_window_status_format='#I #W'
-tmux_conf_theme_window_status_format='#{circled_window_index} #W'
+tmux_conf_theme_window_status_format='#I #W'
+#tmux_conf_theme_window_status_format='#{circled_window_index} #W'
 #tmux_conf_theme_window_status_format='#I #W#{?window_bell_flag,🔔,}#{?window_zoomed_flag,🔍,}'
 
 # window current status style
@@ -123,8 +120,8 @@ tmux_conf_theme_window_status_format='#{circled_window_index} #W'
 #     - #{hostname_ssh}
 #     - #{username}
 #     - #{username_ssh}
-tmux_conf_theme_window_status_current_fg='#282a36'      # black
-tmux_conf_theme_window_status_current_bg='#bd93f9'      # light blue
+tmux_conf_theme_window_status_current_fg='#282a36'
+tmux_conf_theme_window_status_current_bg='#bd93f9'
 tmux_conf_theme_window_status_current_attr='bold'
 #tmux_conf_theme_window_status_current_format='#I #W'
 tmux_conf_theme_window_status_current_format='#{circled_window_index} #W'
@@ -136,12 +133,12 @@ tmux_conf_theme_window_status_activity_bg='default'
 tmux_conf_theme_window_status_activity_attr='underscore'
 
 # window bell status style
-tmux_conf_theme_window_status_bell_fg='#ffff00'         # yellow
+tmux_conf_theme_window_status_bell_fg='#ffff00'
 tmux_conf_theme_window_status_bell_bg='default'
 tmux_conf_theme_window_status_bell_attr='blink,bold'
 
 # window last status style
-tmux_conf_theme_window_status_last_fg='#595b6f'         # light blue
+tmux_conf_theme_window_status_last_fg='#595b6f'
 tmux_conf_theme_window_status_last_bg='default'
 tmux_conf_theme_window_status_last_attr='none'
 
@@ -150,10 +147,10 @@ tmux_conf_theme_window_status_last_attr='none'
 #tmux_conf_theme_left_separator_sub='|'
 #tmux_conf_theme_right_separator_main=''
 #tmux_conf_theme_right_separator_sub='|'
-tmux_conf_theme_left_separator_main=''  # /!\ you don't need to install Powerline
-tmux_conf_theme_left_separator_sub=''   #   you only need fonts patched with
-tmux_conf_theme_right_separator_main='' #   Powerline symbols or the standalone
-tmux_conf_theme_right_separator_sub=''  #   PowerlineSymbols.otf font
+tmux_conf_theme_left_separator_main='\uE0B0'  # /!\ you don't need to install Powerline
+tmux_conf_theme_left_separator_sub='\uE0B1'   #   you only need fonts patched with
+tmux_conf_theme_right_separator_main='\uE0B2' #   Powerline symbols or the standalone
+tmux_conf_theme_right_separator_sub='\uE0B3'  #   PowerlineSymbols.otf font, see README.md
 
 # status left/right content:
 #   - separate main sections with '|'
@@ -179,8 +176,8 @@ tmux_conf_theme_right_separator_sub=''  #   PowerlineSymbols.otf font
 #     - #{uptime_s}
 #     - #{username}
 #     - #{username_ssh}
-tmux_conf_theme_status_left=' 🦹 #S | ↑#{?uptime_y, #{uptime_y}y,}#{?uptime_d, #{uptime_d}d,}#{?uptime_h, #{uptime_h}h,}#{?uptime_m, #{uptime_m}m,} '
-tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized} #{tasks_status} #{?battery_status, #{battery_status},}#{?battery_bar, #{battery_bar},}#{?battery_percentage, #{battery_percentage},} , %R , %d %b | #{username}#{root} | #{hostname} '
+tmux_conf_theme_status_left=' ❐ #S | ↑#{?uptime_y, #{uptime_y}y,}#{?uptime_d, #{uptime_d}d,}#{?uptime_h, #{uptime_h}h,}#{?uptime_m, #{uptime_m}m,} '
+tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized} #{?battery_status, #{battery_status},}#{?battery_bar, #{battery_bar},}#{?battery_percentage, #{battery_percentage},} , %R , %d %b | #{username}#{root} | #{hostname} '
 
 # status left style
 tmux_conf_theme_status_left_fg='#282a36,#f8f8f2,#e4e4e4'  # black, white , white
@@ -231,8 +228,8 @@ tmux_conf_battery_bar_length='auto'
 #   - gradient (default)
 #   - heat
 #   - 'colour_full_fg,colour_empty_fg,colour_bg'
-tmux_conf_battery_bar_palette='gradient'
-#tmux_conf_battery_bar_palette='#d70000,#e4e4e4,#000000'   # red, white, black
+#tmux_conf_battery_bar_palette='gradient'
+tmux_conf_battery_bar_palette='#ff79c6,#6272a4,#44475a'   # red, white, black
 
 # battery hbar palette, possible values are:
 #   - gradient (default)
@@ -268,22 +265,24 @@ tmux_conf_theme_clock_style='24'
 #   - false (default)
 # on macOS, this requires installing reattach-to-user-namespace, see README.md
 # on Linux, this requires xsel or xclip
-tmux_conf_copy_to_os_clipboard=true
+tmux_conf_copy_to_os_clipboard=false
 
 
 # -- user customizations -------------------------------------------------------
-# this is the place to override or undo settings
+# this is the place to override or undo settings by Festum
+# Want to have tmux but no root access? https://gist.github.com/ryin/3106801
+# TPM: must have plug-in manager git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+# ------------------------------------------------------------------------------
 
-# increase history size
-#set -g history-limit 10000
-
-# start with mouse mode enabled
+set -g default-terminal "xterm-256color"
+set -g xterm-keys on
+set -g history-limit 50000
 set -g mouse on
-
-# force Vi mode
-#   really you should export VISUAL or EDITOR environment variable, see manual
+set -g set-clipboard off #basically disables (broken) automatic copy on selection.
+#set -g status-position top
 #set -g status-keys vi
-#set -g mode-keys vi
+set -g mode-keys vi
+
 
 # replace C-b by C-a instead of using both prefixes
 # set -gu prefix2
@@ -291,28 +290,50 @@ set -g mouse on
 # unbind C-b
 # set -g prefix C-a
 # bind C-a send-prefix
+# key bindings for horizontal and vertical panes
+unbind %
+bind | split-window -h # Add vertical pane
+unbind '"'
+bind - split-window -v # Add horizontal pane
 
-# move status line to top
-#set -g status-position top
+bind a run-shell "if [[ `tmux show-options -w | grep 'synchronize-panes.*on'` ]]; then toggle=off; else export toggle=on; fi; tmux display-message \"sync panes tmux: \$toggle\"; tmux set-option -w synchronize-panes \$toggle &> /dev/null"
+
+bind-key -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "xclip -se c -i"
+
+# Reorder windows
+bind-key -n S-Left swap-window -t -1
+bind-key -n S-Right swap-window -t +1
+
+# use p to paste
+bind -T copy-mode-vi p paste-buffer
+bind -T copy-mode-vi v send -X begin-selection
+
+# Mac paste hacks
+#MAC="command -v pbcopy"
+#bind -T copy-mode-vi y     if "$MAC" 'send -X copy-pipe-and-cancel "pbcopy"'
+#bind -T copy-mode-vi Enter if "$MAC" 'send -X copy-pipe-and-cancel "pbcopy"'
+#bind -T copy-mode-vi MouseDragEnd1Pane if "$MAC" 'send -X copy-pipe-and-cancel "pbcopy"'
 
 # List of plugins
-set -g @tpm_plugins '           \
-    tmux-plugins/tpm            \
-    tmux-plugins/tmux-sensible  \
-    tmux-plugins/tmux-yank      \
-    tmux-plugins/tmux-open      \
-    chriszarate/tmux-tasks      \
-'
-# tmux-tasks plugin configuration
-# Task manager
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-continuum'
+set -g @plugin 'tmux-plugins/tmux-copycat'
+set -g @plugin 'tmux-plugins/tmux-yank'
+set -g @plugin 'tmux-plugins/tmux-open'
+set -g @plugin 'chriszarate/tmux-tasks'
+
+## Plugin config
+set -g @continuum-boot 'on'
+set -g @continuum-restore 'on'
+set -g @continuum-save-interval '10'
+set -g @resurrect-capture-pane-contents 'on'
+set -g @resurrect-strategy-nvim 'session'
+set -g @resurrect-save-shell-history 'on'
+set -g @resurrect-save 'S'
+set -g @resurrect-restore 'R'
 set -g @tasks_manager 'taskwarrior'
 
-# Colors
-set -g @tasks_format_begin '#[fg=orange,bg=#f8f8f2]'
-set -g @tasks_format_end '#[fg=white,bg=#44475a]'
-
-# Icons
-set -g @tasks_icon_urgent '🔥'
-set -g @tasks_icon_outstanding '+'
-
-set-option -g default-shell /usr/bin/fish
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+run '~/.tmux/plugins/tpm/tpm'
